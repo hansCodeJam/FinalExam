@@ -15,14 +15,10 @@ class BeerFetch extends Component {
         let url = "https://api.punkapi.com/v2/beers"
     
         axios.get(url).then(data => {
-            console.log(data)
-            console.log(data.data)
-            console.log(data.data[0].id)
         
             this.setState({
                 beer: data
             })
-            // console.log(data.name)
         })
     
     }
@@ -37,7 +33,7 @@ class BeerFetch extends Component {
                 {this.state.beer.map((beers,idx) => {
                     return(
                         <div key={beers.id}>
-                                <BeerCard data={beers} />
+                                <BeerCard beer={beers} />
                             </div>
                     )
                 })}
