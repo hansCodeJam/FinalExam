@@ -18,9 +18,6 @@ class BeerFetch extends Component {
             console.log(data)
             console.log(data.data)
             console.log(data.data[0].id)
-            console.log(data.data[0].name)
-            console.log(data.data[0].description)
-            console.log(data.data[0].tips)
         
             this.setState({
                 beer: data
@@ -37,7 +34,7 @@ class BeerFetch extends Component {
     render() {
         return (
             <div>
-                {this.state.beer.map(beers => {
+                {this.state.beer.map((beers,idx) => {
                     return(
                         <div key={beers.id}>
                                 <BeerCard data={beers} />
